@@ -1,0 +1,40 @@
+
+apoc use case :1
+
+
+match(a:Student)
+call apoc.do.case([a.Name="Roni","SET a.LastName='Das' return a",
+                a.Name="Rahule","SET a.LastName='Roy' return a"],"",{a:a})
+                yield value
+                return value.a.Name,value.a.LastName
+
+
+
+
+match(a:Student)
+call apoc.do.when(a.Name="Roni",
+                "set a.Name='RONI DAS' return a",
+                "set a.Name='RAHUL DRAVID' return a",{a:a})
+                yield value
+                return value
+
+match(a:Student)
+call apoc.when(a.Name="Roni",
+                "return a.Name as r1",
+                "return a.Name as r2",{a:a})
+                yield value
+                return value.r1,value.r2
+
+
+
+match(n:Student)
+with n, n.Rank as rank
+order by n,rank
+return  apoc.agg.first(n.Name) as topper_name
+
+match(n:Student)
+with n, n.Rank as rank
+order by n,rank
+return  apoc.agg.last(n.Name) as lowsest
+
+
