@@ -1,0 +1,133 @@
+[2022-02-13 16:14:49,801] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_neo4j.run_neo4j_query manual__2022-02-13T16:14:48.030155+00:00 [queued]>
+[2022-02-13 16:14:49,828] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_neo4j.run_neo4j_query manual__2022-02-13T16:14:48.030155+00:00 [queued]>
+[2022-02-13 16:14:49,829] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-13 16:14:49,830] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-13 16:14:49,831] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-13 16:14:49,851] {taskinstance.py:1259} INFO - Executing <Task(Neo4jOperator): run_neo4j_query> on 2022-02-13 16:14:48.030155+00:00
+[2022-02-13 16:14:49,857] {standard_task_runner.py:52} INFO - Started process 148 to run task
+[2022-02-13 16:14:49,869] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'test_neo4j', 'run_neo4j_query', 'manual__2022-02-13T16:14:48.030155+00:00', '--job-id', '194', '--raw', '--subdir', 'DAGS_FOLDER/test_neo4j.py', '--cfg-path', '/tmp/tmp17qa31hs', '--error-file', '/tmp/tmpbjc6b3nz']
+[2022-02-13 16:14:49,876] {standard_task_runner.py:77} INFO - Job 194: Subtask run_neo4j_query
+[2022-02-13 16:14:49,950] {logging_mixin.py:109} INFO - Running <TaskInstance: test_neo4j.run_neo4j_query manual__2022-02-13T16:14:48.030155+00:00 [running]> on host c1db65cdfdb9
+[2022-02-13 16:14:50,015] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=test_neo4j
+AIRFLOW_CTX_TASK_ID=run_neo4j_query
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-13T16:14:48.030155+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-02-13T16:14:48.030155+00:00
+[2022-02-13 16:14:50,017] {neo4j.py:58} INFO - Executing: MATCH (tom {name: "Tom Hanks", date: "2022-02-13"}) RETURN tom
+[2022-02-13 16:14:50,023] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2022-02-13 16:14:50,028] {base.py:79} INFO - Using connection to: id: neo4j_conn_id. Host: localhost, Port: None, Schema: None, Login: neo4j, Password: ***, extra: {}
+[2022-02-13 16:14:50,029] {neo4j.py:59} INFO - URI: bolt://localhost:7687
+[2022-02-13 16:14:50,034] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 1252, in _connect
+    s.connect(resolved_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 1373, in connect
+    s = _connect(resolved_address, timeout, keep_alive)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 1266, in _connect
+    raise ServiceUnavailable("Failed to establish connection to {!r} (reason {})".format(resolved_address, error))
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [Errno 111] Connection refused)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/operators/neo4j.py", line 60, in execute
+    hook.run(self.sql)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/hooks/neo4j.py", line 113, in run
+    result = session.run(query)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/simple.py", line 204, in run
+    self._connect(self._config.default_access_mode)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/simple.py", line 108, in _connect
+    super()._connect(access_mode)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/__init__.py", line 83, in _connect
+    bookmarks=self._bookmarks
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 841, in acquire
+    return self._acquire(self.address, timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 695, in _acquire
+    connection = self.opener(address, timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 826, in opener
+    **pool_config
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 323, in open
+    keep_alive=pool_config.keep_alive,
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 1403, in connect
+    ) from errors[0]
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7687 (resolved to ('127.0.0.1:7687', '[::1]:7687')):
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [Errno 111] Connection refused)
+Failed to establish connection to ResolvedIPv6Address(('::1', 7687, 0, 0)) (reason [Errno 99] Cannot assign requested address)
+[2022-02-13 16:14:50,059] {taskinstance.py:1277} INFO - Marking task as FAILED. dag_id=test_neo4j, task_id=run_neo4j_query, execution_date=20220213T161448, start_date=20220213T161449, end_date=20220213T161450
+[2022-02-13 16:14:50,079] {standard_task_runner.py:92} ERROR - Failed to execute job 194 for task run_neo4j_query
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 1252, in _connect
+    s.connect(resolved_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 1373, in connect
+    s = _connect(resolved_address, timeout, keep_alive)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 1266, in _connect
+    raise ServiceUnavailable("Failed to establish connection to {!r} (reason {})".format(resolved_address, error))
+neo4j.exceptions.ServiceUnavailable: Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [Errno 111] Connection refused)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 184, in _run_raw_task
+    error_file=args.error_file,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/operators/neo4j.py", line 60, in execute
+    hook.run(self.sql)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/hooks/neo4j.py", line 113, in run
+    result = session.run(query)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/simple.py", line 204, in run
+    self._connect(self._config.default_access_mode)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/simple.py", line 108, in _connect
+    super()._connect(access_mode)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/__init__.py", line 83, in _connect
+    bookmarks=self._bookmarks
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 841, in acquire
+    return self._acquire(self.address, timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 695, in _acquire
+    connection = self.opener(address, timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 826, in opener
+    **pool_config
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 323, in open
+    keep_alive=pool_config.keep_alive,
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 1403, in connect
+    ) from errors[0]
+neo4j.exceptions.ServiceUnavailable: Couldn't connect to localhost:7687 (resolved to ('127.0.0.1:7687', '[::1]:7687')):
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [Errno 111] Connection refused)
+Failed to establish connection to ResolvedIPv6Address(('::1', 7687, 0, 0)) (reason [Errno 99] Cannot assign requested address)
+[2022-02-13 16:14:50,127] {local_task_job.py:154} INFO - Task exited with return code 1
+[2022-02-13 16:14:50,168] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

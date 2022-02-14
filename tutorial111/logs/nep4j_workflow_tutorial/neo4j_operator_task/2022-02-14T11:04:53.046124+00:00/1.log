@@ -1,0 +1,25 @@
+[2022-02-14 11:04:54,878] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: nep4j_workflow_tutorial.neo4j_operator_task manual__2022-02-14T11:04:53.046124+00:00 [queued]>
+[2022-02-14 11:04:54,948] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: nep4j_workflow_tutorial.neo4j_operator_task manual__2022-02-14T11:04:53.046124+00:00 [queued]>
+[2022-02-14 11:04:54,951] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-14 11:04:54,954] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-14 11:04:54,955] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-14 11:04:55,014] {taskinstance.py:1259} INFO - Executing <Task(Neo4jOperator): neo4j_operator_task> on 2022-02-14 11:04:53.046124+00:00
+[2022-02-14 11:04:55,043] {standard_task_runner.py:52} INFO - Started process 281 to run task
+[2022-02-14 11:04:55,073] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'nep4j_workflow_tutorial', 'neo4j_operator_task', 'manual__2022-02-14T11:04:53.046124+00:00', '--job-id', '294', '--raw', '--subdir', 'DAGS_FOLDER/neo4j_workflow_tutorial.py', '--cfg-path', '/tmp/tmp1ivyltv3', '--error-file', '/tmp/tmphpc7f3sy']
+[2022-02-14 11:04:55,086] {standard_task_runner.py:77} INFO - Job 294: Subtask neo4j_operator_task
+[2022-02-14 11:04:55,380] {logging_mixin.py:109} INFO - Running <TaskInstance: nep4j_workflow_tutorial.neo4j_operator_task manual__2022-02-14T11:04:53.046124+00:00 [running]> on host 809d0f9062f6
+[2022-02-14 11:04:55,558] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=nep4j_workflow_tutorial
+AIRFLOW_CTX_TASK_ID=neo4j_operator_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-14T11:04:53.046124+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-02-14T11:04:53.046124+00:00
+[2022-02-14 11:04:55,561] {neo4j.py:58} INFO - Executing: Create(m:Student{Name:"Rahul"})
+[2022-02-14 11:04:55,569] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2022-02-14 11:04:55,575] {base.py:79} INFO - Using connection to: id: neo4j_conn_id. Host: host.docker.internal, Port: None, Schema: None, Login: neo4j, Password: ***, extra: {}
+[2022-02-14 11:04:55,578] {neo4j.py:59} INFO - URI: bolt://host.docker.internal:7687
+[2022-02-14 11:04:55,704] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=nep4j_workflow_tutorial, task_id=neo4j_operator_task, execution_date=20220214T110453, start_date=20220214T110454, end_date=20220214T110455
+[2022-02-14 11:04:55,789] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-02-14 11:04:55,873] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

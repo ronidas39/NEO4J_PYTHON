@@ -1,0 +1,26 @@
+[2022-02-13 17:05:24,704] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_neo4j.neo4j_hook manual__2022-02-13T17:05:23.627729+00:00 [queued]>
+[2022-02-13 17:05:24,718] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_neo4j.neo4j_hook manual__2022-02-13T17:05:23.627729+00:00 [queued]>
+[2022-02-13 17:05:24,720] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-13 17:05:24,721] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-13 17:05:24,721] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-13 17:05:24,737] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): neo4j_hook> on 2022-02-13 17:05:23.627729+00:00
+[2022-02-13 17:05:24,745] {standard_task_runner.py:52} INFO - Started process 155 to run task
+[2022-02-13 17:05:24,750] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'test_neo4j', 'neo4j_hook', 'manual__2022-02-13T17:05:23.627729+00:00', '--job-id', '271', '--raw', '--subdir', 'DAGS_FOLDER/test_neo4j.py', '--cfg-path', '/tmp/tmph95ghris', '--error-file', '/tmp/tmp22dh86nw']
+[2022-02-13 17:05:24,751] {standard_task_runner.py:77} INFO - Job 271: Subtask neo4j_hook
+[2022-02-13 17:05:24,838] {logging_mixin.py:109} INFO - Running <TaskInstance: test_neo4j.neo4j_hook manual__2022-02-13T17:05:23.627729+00:00 [running]> on host 48e82ab1b440
+[2022-02-13 17:05:24,932] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=test_neo4j
+AIRFLOW_CTX_TASK_ID=neo4j_hook
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-13T17:05:23.627729+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-02-13T17:05:23.627729+00:00
+[2022-02-13 17:05:24,938] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2022-02-13 17:05:24,941] {base.py:79} INFO - Using connection to: id: neo4j_conn_id. Host: host.docker.internal, Port: None, Schema: None, Login: neo4j, Password: ***, extra: {}
+[2022-02-13 17:05:24,943] {neo4j.py:59} INFO - URI: bolt://host.docker.internal:7687
+[2022-02-13 17:05:24,968] {logging_mixin.py:109} INFO - [{'results': {'Type': 'Class 1', 'Count': 78}}]
+[2022-02-13 17:05:24,970] {python.py:175} INFO - Done. Returned value was: None
+[2022-02-13 17:05:24,985] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=test_neo4j, task_id=neo4j_hook, execution_date=20220213T170523, start_date=20220213T170524, end_date=20220213T170524
+[2022-02-13 17:05:25,049] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-02-13 17:05:25,090] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

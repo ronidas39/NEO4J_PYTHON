@@ -1,0 +1,123 @@
+[2022-02-13 16:10:44,120] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_neo4j.run_neo4j_query manual__2022-02-13T16:10:42.436466+00:00 [queued]>
+[2022-02-13 16:10:44,136] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_neo4j.run_neo4j_query manual__2022-02-13T16:10:42.436466+00:00 [queued]>
+[2022-02-13 16:10:44,137] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-13 16:10:44,138] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-13 16:10:44,139] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-13 16:10:44,159] {taskinstance.py:1259} INFO - Executing <Task(Neo4jOperator): run_neo4j_query> on 2022-02-13 16:10:42.436466+00:00
+[2022-02-13 16:10:44,167] {standard_task_runner.py:52} INFO - Started process 127 to run task
+[2022-02-13 16:10:44,172] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'test_neo4j', 'run_neo4j_query', 'manual__2022-02-13T16:10:42.436466+00:00', '--job-id', '161', '--raw', '--subdir', 'DAGS_FOLDER/test_neo4j.py', '--cfg-path', '/tmp/tmpxvnauw4h', '--error-file', '/tmp/tmp_lyehxwp']
+[2022-02-13 16:10:44,175] {standard_task_runner.py:77} INFO - Job 161: Subtask run_neo4j_query
+[2022-02-13 16:10:44,264] {logging_mixin.py:109} INFO - Running <TaskInstance: test_neo4j.run_neo4j_query manual__2022-02-13T16:10:42.436466+00:00 [running]> on host f180d498dded
+[2022-02-13 16:10:44,327] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=test_neo4j
+AIRFLOW_CTX_TASK_ID=run_neo4j_query
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-13T16:10:42.436466+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-02-13T16:10:42.436466+00:00
+[2022-02-13 16:10:44,329] {neo4j.py:58} INFO - Executing: MATCH (tom {name: "Tom Hanks", date: "2022-02-13"}) RETURN tom
+[2022-02-13 16:10:44,335] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2022-02-13 16:10:44,339] {base.py:79} INFO - Using connection to: id: neo4j_conn_id. Host: bolt://localhost:7687, Port: None, Schema: None, Login: neo4j, Password: ***, extra: {}
+[2022-02-13 16:10:44,341] {neo4j.py:59} INFO - URI: bolt://bolt://localhost:7687:7687
+[2022-02-13 16:10:44,405] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/addressing.py", line 155, in _dns_resolve
+    info = getaddrinfo(address.host, address.port, family, SOCK_STREAM)
+  File "/usr/local/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/operators/neo4j.py", line 60, in execute
+    hook.run(self.sql)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/hooks/neo4j.py", line 113, in run
+    result = session.run(query)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/simple.py", line 204, in run
+    self._connect(self._config.default_access_mode)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/simple.py", line 108, in _connect
+    super()._connect(access_mode)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/__init__.py", line 83, in _connect
+    bookmarks=self._bookmarks
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 841, in acquire
+    return self._acquire(self.address, timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 695, in _acquire
+    connection = self.opener(address, timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 826, in opener
+    **pool_config
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 323, in open
+    keep_alive=pool_config.keep_alive,
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 1369, in connect
+    resolved_addresses = Address(address).resolve(resolver=custom_resolver)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/addressing.py", line 195, in resolve
+    resolved.extend(self._dns_resolve(self, family))
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/addressing.py", line 157, in _dns_resolve
+    raise ValueError("Cannot resolve address {}".format(address))
+ValueError: Cannot resolve address bolt:7687
+[2022-02-13 16:10:44,436] {taskinstance.py:1277} INFO - Marking task as FAILED. dag_id=test_neo4j, task_id=run_neo4j_query, execution_date=20220213T161042, start_date=20220213T161044, end_date=20220213T161044
+[2022-02-13 16:10:44,463] {standard_task_runner.py:92} ERROR - Failed to execute job 161 for task run_neo4j_query
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/addressing.py", line 155, in _dns_resolve
+    info = getaddrinfo(address.host, address.port, family, SOCK_STREAM)
+  File "/usr/local/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 184, in _run_raw_task
+    error_file=args.error_file,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/operators/neo4j.py", line 60, in execute
+    hook.run(self.sql)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/hooks/neo4j.py", line 113, in run
+    result = session.run(query)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/simple.py", line 204, in run
+    self._connect(self._config.default_access_mode)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/simple.py", line 108, in _connect
+    super()._connect(access_mode)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/work/__init__.py", line 83, in _connect
+    bookmarks=self._bookmarks
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 841, in acquire
+    return self._acquire(self.address, timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 695, in _acquire
+    connection = self.opener(address, timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 826, in opener
+    **pool_config
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 323, in open
+    keep_alive=pool_config.keep_alive,
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/io/__init__.py", line 1369, in connect
+    resolved_addresses = Address(address).resolve(resolver=custom_resolver)
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/addressing.py", line 195, in resolve
+    resolved.extend(self._dns_resolve(self, family))
+  File "/home/airflow/.local/lib/python3.7/site-packages/neo4j/addressing.py", line 157, in _dns_resolve
+    raise ValueError("Cannot resolve address {}".format(address))
+ValueError: Cannot resolve address bolt:7687
+[2022-02-13 16:10:44,510] {local_task_job.py:154} INFO - Task exited with return code 1
+[2022-02-13 16:10:44,551] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

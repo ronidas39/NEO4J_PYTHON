@@ -1,0 +1,126 @@
+[2022-02-13 03:42:38,387] {processor.py:163} INFO - Started process (PID=48) to work on /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:42:38,396] {processor.py:642} INFO - Processing file /opt/airflow/dags/neo4j_test.py for tasks to queue
+[2022-02-13 03:42:38,403] {logging_mixin.py:109} INFO - [2022-02-13 03:42:38,401] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:42:38,441] {logging_mixin.py:109} INFO - [2022-02-13 03:42:38,434] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/neo4j_test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/neo4j_test.py", line 4, in <module>
+    from airflow.providers.neo4j.operators.neo4j import Neo4jOperator
+ModuleNotFoundError: No module named 'airflow.providers.neo4j'
+[2022-02-13 03:42:38,545] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:42:38,617] {processor.py:171} INFO - Processing /opt/airflow/dags/neo4j_test.py took 0.261 seconds
+[2022-02-13 03:43:09,126] {processor.py:163} INFO - Started process (PID=118) to work on /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:43:09,135] {processor.py:642} INFO - Processing file /opt/airflow/dags/neo4j_test.py for tasks to queue
+[2022-02-13 03:43:09,143] {logging_mixin.py:109} INFO - [2022-02-13 03:43:09,142] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:43:09,200] {logging_mixin.py:109} INFO - [2022-02-13 03:43:09,194] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/neo4j_test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/neo4j_test.py", line 4, in <module>
+    from airflow.providers.neo4j.operators.neo4j import Neo4jOperator
+ModuleNotFoundError: No module named 'airflow.providers.neo4j'
+[2022-02-13 03:43:09,276] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:43:09,320] {processor.py:171} INFO - Processing /opt/airflow/dags/neo4j_test.py took 0.206 seconds
+[2022-02-13 03:43:39,916] {processor.py:163} INFO - Started process (PID=164) to work on /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:43:39,919] {processor.py:642} INFO - Processing file /opt/airflow/dags/neo4j_test.py for tasks to queue
+[2022-02-13 03:43:39,922] {logging_mixin.py:109} INFO - [2022-02-13 03:43:39,921] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:43:39,946] {logging_mixin.py:109} INFO - [2022-02-13 03:43:39,944] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/neo4j_test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/neo4j_test.py", line 4, in <module>
+    from airflow.providers.neo4j.operators.neo4j import Neo4jOperator
+ModuleNotFoundError: No module named 'airflow.providers.neo4j'
+[2022-02-13 03:43:39,995] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:43:40,015] {processor.py:171} INFO - Processing /opt/airflow/dags/neo4j_test.py took 0.124 seconds
+[2022-02-13 03:44:10,117] {processor.py:163} INFO - Started process (PID=229) to work on /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:44:10,121] {processor.py:642} INFO - Processing file /opt/airflow/dags/neo4j_test.py for tasks to queue
+[2022-02-13 03:44:10,123] {logging_mixin.py:109} INFO - [2022-02-13 03:44:10,123] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:44:10,137] {logging_mixin.py:109} INFO - [2022-02-13 03:44:10,134] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/neo4j_test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/neo4j_test.py", line 4, in <module>
+    from airflow.providers.neo4j.operators.neo4j import Neo4jOperator
+ModuleNotFoundError: No module named 'airflow.providers.neo4j'
+[2022-02-13 03:44:10,163] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:44:10,180] {processor.py:171} INFO - Processing /opt/airflow/dags/neo4j_test.py took 0.069 seconds
+[2022-02-13 03:44:40,994] {processor.py:163} INFO - Started process (PID=283) to work on /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:44:40,996] {processor.py:642} INFO - Processing file /opt/airflow/dags/neo4j_test.py for tasks to queue
+[2022-02-13 03:44:40,999] {logging_mixin.py:109} INFO - [2022-02-13 03:44:40,999] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:44:41,010] {logging_mixin.py:109} INFO - [2022-02-13 03:44:41,008] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/neo4j_test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/neo4j_test.py", line 4, in <module>
+    from airflow.providers.neo4j.operators.neo4j import Neo4jOperator
+ModuleNotFoundError: No module named 'airflow.providers.neo4j'
+[2022-02-13 03:44:41,035] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:44:41,055] {processor.py:171} INFO - Processing /opt/airflow/dags/neo4j_test.py took 0.065 seconds
+[2022-02-13 03:45:11,099] {processor.py:163} INFO - Started process (PID=339) to work on /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:45:11,103] {processor.py:642} INFO - Processing file /opt/airflow/dags/neo4j_test.py for tasks to queue
+[2022-02-13 03:45:11,105] {logging_mixin.py:109} INFO - [2022-02-13 03:45:11,105] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:45:11,116] {logging_mixin.py:109} INFO - [2022-02-13 03:45:11,114] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/neo4j_test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/neo4j_test.py", line 4, in <module>
+    from airflow.providers.neo4j.operators.neo4j import Neo4jOperator
+ModuleNotFoundError: No module named 'airflow.providers.neo4j'
+[2022-02-13 03:45:11,141] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:45:11,154] {processor.py:171} INFO - Processing /opt/airflow/dags/neo4j_test.py took 0.060 seconds
+[2022-02-13 03:45:41,345] {processor.py:163} INFO - Started process (PID=403) to work on /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:45:41,348] {processor.py:642} INFO - Processing file /opt/airflow/dags/neo4j_test.py for tasks to queue
+[2022-02-13 03:45:41,351] {logging_mixin.py:109} INFO - [2022-02-13 03:45:41,351] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:45:41,361] {logging_mixin.py:109} INFO - [2022-02-13 03:45:41,357] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/neo4j_test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/neo4j_test.py", line 4, in <module>
+    from airflow.providers.neo4j.operators.neo4j import Neo4jOperator
+ModuleNotFoundError: No module named 'airflow.providers.neo4j'
+[2022-02-13 03:45:41,382] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:45:41,394] {processor.py:171} INFO - Processing /opt/airflow/dags/neo4j_test.py took 0.054 seconds
+[2022-02-13 03:46:11,430] {processor.py:163} INFO - Started process (PID=458) to work on /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:46:11,432] {processor.py:642} INFO - Processing file /opt/airflow/dags/neo4j_test.py for tasks to queue
+[2022-02-13 03:46:11,433] {logging_mixin.py:109} INFO - [2022-02-13 03:46:11,433] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:46:11,444] {logging_mixin.py:109} INFO - [2022-02-13 03:46:11,442] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/neo4j_test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/neo4j_test.py", line 4, in <module>
+    from airflow.providers.neo4j.operators.neo4j import Neo4jOperator
+ModuleNotFoundError: No module named 'airflow.providers.neo4j'
+[2022-02-13 03:46:11,471] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:46:11,485] {processor.py:171} INFO - Processing /opt/airflow/dags/neo4j_test.py took 0.061 seconds
+[2022-02-13 03:46:41,908] {processor.py:163} INFO - Started process (PID=513) to work on /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:46:41,912] {processor.py:642} INFO - Processing file /opt/airflow/dags/neo4j_test.py for tasks to queue
+[2022-02-13 03:46:41,913] {logging_mixin.py:109} INFO - [2022-02-13 03:46:41,913] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:46:41,926] {logging_mixin.py:109} INFO - [2022-02-13 03:46:41,924] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/neo4j_test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/neo4j_test.py", line 4, in <module>
+    from airflow.providers.neo4j.operators.neo4j import Neo4jOperator
+ModuleNotFoundError: No module named 'airflow.providers.neo4j'
+[2022-02-13 03:46:41,948] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/neo4j_test.py
+[2022-02-13 03:46:41,961] {processor.py:171} INFO - Processing /opt/airflow/dags/neo4j_test.py took 0.059 seconds

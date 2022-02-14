@@ -1,0 +1,23 @@
+[2022-02-11 14:10:52,292] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_workflow_for_email.test_function scheduled__2022-02-11T09:00:00+00:00 [queued]>
+[2022-02-11 14:10:52,589] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_workflow_for_email.test_function scheduled__2022-02-11T09:00:00+00:00 [queued]>
+[2022-02-11 14:10:52,598] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-11 14:10:52,628] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-11 14:10:52,640] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-11 14:10:53,117] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): test_function> on 2022-02-11 09:00:00+00:00
+[2022-02-11 14:10:53,296] {standard_task_runner.py:52} INFO - Started process 140 to run task
+[2022-02-11 14:10:53,341] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'test_workflow_for_email', 'test_function', 'scheduled__2022-02-11T09:00:00+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/test_workflow_for_email.py', '--cfg-path', '/tmp/tmp1fdee3un', '--error-file', '/tmp/tmpugpp3h7f']
+[2022-02-11 14:10:53,372] {standard_task_runner.py:77} INFO - Job 77: Subtask test_function
+[2022-02-11 14:10:55,111] {logging_mixin.py:109} INFO - Running <TaskInstance: test_workflow_for_email.test_function scheduled__2022-02-11T09:00:00+00:00 [running]> on host c762f4aacf84
+[2022-02-11 14:10:56,067] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=dhapathekabolchi@gmail.com
+AIRFLOW_CTX_DAG_OWNER=arflow
+AIRFLOW_CTX_DAG_ID=test_workflow_for_email
+AIRFLOW_CTX_TASK_ID=test_function
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-11T09:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-02-11T09:00:00+00:00
+[2022-02-11 14:10:56,124] {python.py:175} INFO - Done. Returned value was: None
+[2022-02-11 14:10:56,331] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=test_workflow_for_email, task_id=test_function, execution_date=20220211T090000, start_date=20220211T141052, end_date=20220211T141056
+[2022-02-11 14:10:56,620] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-02-11 14:10:57,120] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check

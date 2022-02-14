@@ -1,0 +1,131 @@
+[2022-02-13 07:44:12,333] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_neo4j.run_neo4j_query manual__2022-02-13T07:44:10.445419+00:00 [queued]>
+[2022-02-13 07:44:12,354] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_neo4j.run_neo4j_query manual__2022-02-13T07:44:10.445419+00:00 [queued]>
+[2022-02-13 07:44:12,359] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-13 07:44:12,360] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-13 07:44:12,362] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-13 07:44:12,386] {taskinstance.py:1259} INFO - Executing <Task(Neo4jOperator): run_neo4j_query> on 2022-02-13 07:44:10.445419+00:00
+[2022-02-13 07:44:12,394] {standard_task_runner.py:52} INFO - Started process 135 to run task
+[2022-02-13 07:44:12,403] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'test_neo4j', 'run_neo4j_query', 'manual__2022-02-13T07:44:10.445419+00:00', '--job-id', '149', '--raw', '--subdir', 'DAGS_FOLDER/test_neo4j.py', '--cfg-path', '/tmp/tmpipwkxxg0', '--error-file', '/tmp/tmpqsdihugv']
+[2022-02-13 07:44:12,406] {standard_task_runner.py:77} INFO - Job 149: Subtask run_neo4j_query
+[2022-02-13 07:44:12,508] {logging_mixin.py:109} INFO - Running <TaskInstance: test_neo4j.run_neo4j_query manual__2022-02-13T07:44:10.445419+00:00 [running]> on host ae90b1fd1659
+[2022-02-13 07:44:12,586] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=test_neo4j
+AIRFLOW_CTX_TASK_ID=run_neo4j_query
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-13T07:44:10.445419+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-02-13T07:44:10.445419+00:00
+[2022-02-13 07:44:12,587] {neo4j.py:58} INFO - Executing: MATCH (tom {name: "Tom Hanks", date: "2022-02-13"}) RETURN tom
+[2022-02-13 07:44:12,588] {connection.py:407} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 400, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 64, in get_connection
+    conn_uri = self.get_conn_uri(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/environment_variables.py", line 33, in get_conn_uri
+    environment_uri = os.environ.get(CONN_ENV_PREFIX + conn_id.upper())
+AttributeError: 'dict' object has no attribute 'upper'
+[2022-02-13 07:44:12,602] {connection.py:407} ERROR - Unable to retrieve connection from secrets backend (MetastoreBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'dict'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 400, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/metastore.py", line 36, in get_connection
+    conn = session.query(Connection).filter(Connection.conn_id == conn_id).first()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3429, in first
+    ret = list(self[0:1])
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3203, in __getitem__
+    return list(res)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3560, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'dict'
+[SQL: SELECT connection.password AS connection_password, connection.extra AS connection_extra, connection.id AS connection_id, connection.conn_id AS connection_conn_id, connection.conn_type AS connection_conn_type, connection.description AS connection_description, connection.host AS connection_host, connection.schema AS connection_schema, connection.login AS connection_login, connection.port AS connection_port, connection.is_encrypted AS connection_is_encrypted, connection.is_extra_encrypted AS connection_is_extra_encrypted 
+FROM connection 
+WHERE connection.conn_id = %(conn_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'conn_id_1': {'host': 'bolt://localhost', 'port': 7687, 'login': 'neo4j', 'password': 'Rambo@1234'}, 'param_1': 1}]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+[2022-02-13 07:44:12,621] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/operators/neo4j.py", line 60, in execute
+    hook.run(self.sql)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/hooks/neo4j.py", line 110, in run
+    driver = self.get_conn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/hooks/neo4j.py", line 56, in get_conn
+    self.connection = self.get_connection(self.neo4j_conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 68, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 410, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `{'host': 'bolt://localhost', 'port': 7687, 'login': 'neo4j', 'password': 'Rambo@1234'}` isn't defined
+[2022-02-13 07:44:12,633] {taskinstance.py:1277} INFO - Marking task as FAILED. dag_id=test_neo4j, task_id=run_neo4j_query, execution_date=20220213T074410, start_date=20220213T074412, end_date=20220213T074412
+[2022-02-13 07:44:12,656] {standard_task_runner.py:92} ERROR - Failed to execute job 149 for task run_neo4j_query
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 184, in _run_raw_task
+    error_file=args.error_file,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/operators/neo4j.py", line 60, in execute
+    hook.run(self.sql)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/hooks/neo4j.py", line 110, in run
+    driver = self.get_conn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/neo4j/hooks/neo4j.py", line 56, in get_conn
+    self.connection = self.get_connection(self.neo4j_conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 68, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 410, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `{'host': 'bolt://localhost', 'port': 7687, 'login': 'neo4j', 'password': 'Rambo@1234'}` isn't defined
+[2022-02-13 07:44:12,696] {local_task_job.py:154} INFO - Task exited with return code 1
+[2022-02-13 07:44:12,741] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,27 @@
+[2022-02-11 14:11:05,767] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_workflow_for_email.email_function scheduled__2022-02-11T10:00:00+00:00 [queued]>
+[2022-02-11 14:11:06,103] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: test_workflow_for_email.email_function scheduled__2022-02-11T10:00:00+00:00 [queued]>
+[2022-02-11 14:11:06,115] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-11 14:11:06,162] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-02-11 14:11:06,171] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-11 14:11:06,460] {taskinstance.py:1259} INFO - Executing <Task(EmailOperator): email_function> on 2022-02-11 10:00:00+00:00
+[2022-02-11 14:11:06,606] {standard_task_runner.py:52} INFO - Started process 157 to run task
+[2022-02-11 14:11:06,759] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'test_workflow_for_email', 'email_function', 'scheduled__2022-02-11T10:00:00+00:00', '--job-id', '85', '--raw', '--subdir', 'DAGS_FOLDER/test_workflow_for_email.py', '--cfg-path', '/tmp/tmpbv5a1o78', '--error-file', '/tmp/tmpithdrbwa']
+[2022-02-11 14:11:06,769] {standard_task_runner.py:77} INFO - Job 85: Subtask email_function
+[2022-02-11 14:11:07,716] {logging_mixin.py:109} INFO - Running <TaskInstance: test_workflow_for_email.email_function scheduled__2022-02-11T10:00:00+00:00 [running]> on host c762f4aacf84
+[2022-02-11 14:11:08,769] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=dhapathekabolchi@gmail.com
+AIRFLOW_CTX_DAG_OWNER=arflow
+AIRFLOW_CTX_DAG_ID=test_workflow_for_email
+AIRFLOW_CTX_TASK_ID=email_function
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-11T10:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-02-11T10:00:00+00:00
+[2022-02-11 14:11:08,894] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/email.py:102: PendingDeprecationWarning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+  send_mime_email(e_from=smtp_mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+
+[2022-02-11 14:11:08,896] {email.py:208} INFO - Email alerting: attempt 1
+[2022-02-11 14:11:10,585] {email.py:220} INFO - Sent an alert email to ['dhapathekabolchi@gmail.com']
+[2022-02-11 14:11:12,631] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=test_workflow_for_email, task_id=email_function, execution_date=20220211T100000, start_date=20220211T141105, end_date=20220211T141112
+[2022-02-11 14:11:12,824] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-02-11 14:11:13,177] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check
